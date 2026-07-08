@@ -44,20 +44,23 @@
             padding-left: 10px;
         }
 
+        /* Mengubah grid agar menampilkan gambar satu per satu ke bawah dengan ukuran besar */
         .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 20px;
         }
 
+        /* Desain Item Gambar dengan Rasio Presisi Kertas A3 Lanskap */
         .image-item {
             background: #f7fafc;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
             border: 1px solid #e2e8f0;
+            width: 100%; /* Memenuhi lebar container kartu */
         }
 
         .image-item:hover {
@@ -66,22 +69,25 @@
 
         .image-item img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            /* Mengunci aspek rasio standard dimensi ISO Kertas A3 (420mm x 297mm) */
+            aspect-ratio: 420 / 297; 
+            object-fit: contain; /* Menjamin seluruh lembar peta/foto terlihat penuh tanpa terpotong */
+            background: #e2e8f0; /* Latar abu-abu lembut jika rasio gambar asli agak berbeda */
             display: block;
         }
 
         .image-caption {
-            padding: 12px;
-            font-size: 13px;
-            color: #4a5568;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
             text-align: center;
             background: #ffffff;
             border-top: 1px solid #e2e8f0;
         }
 
         .profile-card {
-            background: #f0fdf4; /* Latar kartu profil hijau muda pudar */
+            background: #f0fdf4;
             padding: 20px;
             border-radius: 12px;
             border: 1px solid #bbf7d0;
@@ -129,7 +135,7 @@
                 </div>
                 <div class="image-item">
                     <img src="layout.png" alt="Pengolahan Data SIG">
-                    <div class="image-caption">Hasil Pemetaan Partisipatif</div>
+                    <div class="image-caption">Hasil Pemetaan Partisipatif (Rasio Cetak A3)</div>
                 </div>
             </div>
             
