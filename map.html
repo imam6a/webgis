@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Map - WebGIS Tanjung Riau</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mengatur agar peta memenuhi layar di bawah navbar */
+        .map-container {
+            width: 100%;
+            height: calc(100vh - 60px); /* Menyesuaikan sisa tinggi layar */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="map.html">Map</a>
+        <a href="gallery.html">Gallery & Kontak</a>
+    </nav>
+
+    <iframe src="peta-qgis2web/index.html" class="map-container"></iframe>
+
+</body>
+</html>
