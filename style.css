@@ -1,4 +1,8 @@
 /* --- RESET STYLING DASAR --- */
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -13,19 +17,22 @@ nav {
     padding: 18px 0;
     text-align: center;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-    border-bottom: 3px solid #2ecc71; /* Aksen garis hijau muda di bawah menu */
+    border-bottom: 3px solid #2ecc71; /* Aksen garis hijau muda */
+    position: relative;
+    z-index: 1001; /* Memastikan menu berada di atas iframe peta */
 }
 
 nav a {
     color: #4a5568;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 15px;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 0.5px;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 20px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 /* Efek saat menu disorot (Hover) */
@@ -40,11 +47,26 @@ body:has(.map-wrapper) nav {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 10px 30px;
+    padding: 8px 20px;
     border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     width: auto;
     border-bottom: none;
+}
+
+/* --- RESPONSIVITAS MOBILE (Layar HP) --- */
+@media (max-width: 600px) {
+    nav a {
+        margin: 0 5px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    body:has(.map-wrapper) nav {
+        top: 10px;
+        padding: 5px 10px;
+        width: 90%;
+    }
 }
